@@ -1,0 +1,38 @@
+<div class="titulo"><mat-label>CLINNIQUEE</mat-label></div>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="box">
+      <p>
+      <mat-card-header>
+        <mat-card-title>Entrar</mat-card-title>
+      </mat-card-header>
+    </p>
+      <form class="example-form" (submit)="login()" [formGroup]="formGroup">
+        <mat-card-content>
+          <p>
+          <mat-form-field class="example-full-width">
+            <input matInput
+            formControlName="usuario"
+            type="text"
+            placeholder="Usuário/Email"
+            required>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width">
+            <input matInput
+            type="password"
+            formControlName="senha"
+            placeholder="Senha"
+            required>
+          </mat-form-field>
+          </p>
+        </mat-card-content>
+        <p>
+        <button mat-stroked-button color="accent" class="btn-block" type="submit">Log in</button>
+        <button mat-stroked-button color="accent" class="btn-block">Registrar</button>
+      </p>
+      </form>
+    </mat-card>
+
+  </div>

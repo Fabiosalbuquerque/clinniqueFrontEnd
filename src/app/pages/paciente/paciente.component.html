@@ -1,0 +1,21 @@
+
+<mat-form-field>
+    <mat-label>Buscar</mat-label>
+    <input matInput [(ngModel)]="filtro" (keyup)="aplicarFiltro()" placeholder="Digite o nome" #input>
+  </mat-form-field>
+<mat-table #table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> {{column}}</mat-header-cell>
+      <mat-cell *matCellDef="let paciente"> {{paciente[column]}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [length]="numPaciente" [pageSizeOptions]="[10, 25, 100]" showFirstLastButtons></mat-paginator>
+  <div style="float: right">
+  <button class="mdc-fab" aria-label="Favorite">
+      <div class="mdc-fab__ripple"></div>
+      <span class="mdc-fab__icon material-icons">add</span>
+    </button>
+  </div>
